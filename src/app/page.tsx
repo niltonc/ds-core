@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Button from '@/components/button';
+import { Input } from '@/components/input';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,6 +41,10 @@ export default function Home() {
         </Button>
 
         <Button variant="text">Text</Button>
+
+        <Input placeholder="basic" />
+        <Input placeholder="number" type="number" />
+        <Input placeholder="password" type="password" />
       </div>
     </main>
   );
