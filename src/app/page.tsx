@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Button from '@/components/button';
-import { Input } from '@/components/input';
+import Input from '@/components/input';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +12,7 @@ export default function Home() {
       setIsLoading(false);
     }, 2000);
   };
+
   return (
     <main>
       <div
@@ -22,7 +23,7 @@ export default function Home() {
           gap: 10
         }}
       >
-        <Button>Primary</Button>
+        {/* <Button>Primary</Button> */}
         <Button loading={isLoading} onClick={simulateAsyncCall}>
           Primary Loading ...
         </Button>

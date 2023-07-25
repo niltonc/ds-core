@@ -17,3 +17,10 @@ export const Input = styled.input`
     border: 1px solid ${colors.violet200};
   }
 `;
+export const EyeIcon = styled.div`
+  position: absolute;
+  top: 72%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+`;
