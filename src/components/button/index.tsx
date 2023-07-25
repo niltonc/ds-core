@@ -10,19 +10,18 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
-  disabled = false,
   loading = false,
   ...rest
 }: ButtonProps) => {
   return (
     <>
       {variant === 'primary' && (
-        <S.ButtonPrimary disabled={disabled} {...rest}>
+        <S.ButtonPrimary {...rest}>
           {loading ? <S.Loading size="12" color="#FFF" /> : children}
         </S.ButtonPrimary>
       )}
       {variant === 'outline' && (
-        <S.ButtonOutline disabled={disabled} {...rest}>
+        <S.ButtonOutline {...rest}>
           {loading ? <S.Loading size="12" /> : children}
         </S.ButtonOutline>
       )}
