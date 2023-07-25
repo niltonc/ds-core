@@ -1,5 +1,13 @@
 'use client';
 
+import Button from '@/components/button';
+import Input from '@/components/input';
+
 export default function Home() {
-  return <main>HOME</main>;
+  return (
+    <main>
+      <Button />
+      <Input />
+    </main>
+  );
 }
