@@ -16,7 +16,7 @@ const Input: React.FC<InputProps> = ({ type = '', ...rest }: InputProps) => {
       {type === '' && <S.Input {...rest} />}
       {type === 'number' && <S.Input type="number" {...rest} />}
       {type === 'password' && (
-        <div>
+        <>
           <S.Input type={isPasswordVisible ? 'text' : type} {...rest}></S.Input>
           <S.EyeIcon onClick={togglePasswordVisibility}>
             {isPasswordVisible ? (
@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = ({ type = '', ...rest }: InputProps) => {
               <Image src={EyeOpen} width={24} height={24} alt="visible" />
             )}
           </S.EyeIcon>
-        </div>
+        </>
       )}
     </>
   );

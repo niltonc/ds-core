@@ -23,7 +23,7 @@ export default function Home() {
           gap: 10
         }}
       >
-        {/* <Button>Primary</Button> */}
+        <Button>Primary</Button>
         <Button loading={isLoading} onClick={simulateAsyncCall}>
           Primary Loading ...
         </Button>
