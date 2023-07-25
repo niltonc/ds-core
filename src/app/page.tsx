@@ -4,6 +4,7 @@ import Button from '@/components/button';
 import Input from '@/components/input';
 import ProfileCard from '@/components/card';
 import Galery from '@/components/galery';
+import Galery02 from '@/components/galery-02';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,6 +51,8 @@ export default function Home() {
         <Input placeholder="password" type="password" />
 
         <Galery />
+
+        <Galery02 />
       </div>
     </main>
   );
