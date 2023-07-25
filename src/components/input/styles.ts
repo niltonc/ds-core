@@ -18,9 +18,9 @@ export const Input = styled.input`
   }
 `;
 export const EyeIcon = styled.div`
-  position: absolute;
   top: 72%;
-  right: 20px;
-  transform: translateY(-50%);
+  right: 10px;
+  position: absolute;
+  transform: translate(-50%, -50%);
   cursor: pointer;
 `;

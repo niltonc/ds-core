@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Button from '@/components/button';
 import Input from '@/components/input';
+import ProfileCard from '@/components/card';
+import Galery from '@/components/galery';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,6 +48,8 @@ export default function Home() {
         <Input placeholder="basic" />
         <Input placeholder="number" type="number" />
         <Input placeholder="password" type="password" />
+
+        <Galery />
       </div>
     </main>
   );
