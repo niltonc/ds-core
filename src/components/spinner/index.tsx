@@ -1,7 +1,7 @@
 import * as S from './styles';
 
 type SpinnerProps = {
-  size?: string;
+  size?: string | number;
   color?: string;
 };
 const Spinner = ({ size, color }: SpinnerProps) => {

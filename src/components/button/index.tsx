@@ -1,25 +1,33 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 import * as S from './styles';
-import Spinner from '../spinner';
 
 type ButtonProps = {
-  variant?: 'primary' | 'outline' | 'text' | string;
+  variant?: 'primary' | 'outline' | 'text';
   children?: ReactNode;
-  disabled?: boolean;
   loading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   children,
-  variant,
-  disabled,
-  loading,
+  variant = 'primary',
+  disabled = false,
+  loading = false,
   ...rest
 }: ButtonProps) => {
   return (
-    <S.Button variant={variant} isDisabled={disabled} {...rest}>
-      {loading ? <Spinner size="13px" color="#fff" /> : children}
-    </S.Button>
+    <>
+      {variant === 'primary' && (
+        <S.ButtonPrimary disabled={disabled} {...rest}>
+          {loading ? <S.Loading size="12" color="#FFF" /> : children}
+        </S.ButtonPrimary>
+      )}
+      {variant === 'outline' && (
+        <S.ButtonOutline disabled={disabled} {...rest}>
+          {loading ? <S.Loading size="12" /> : children}
+        </S.ButtonOutline>
+      )}
+      {variant === 'text' && <S.ButtonText {...rest}>{children}</S.ButtonText>}
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface SpinnerProps {
-  size?: string;
+  size?: string | number;
   color?: string;
 }
 
@@ -11,8 +11,8 @@ const defaultSpinnerProps: SpinnerProps = {
 };
 
 export const Spinner = styled.div<SpinnerProps>`
-  width: ${(props) => props.size};
-  height: ${(props) => props.size};
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
   border-radius: 50%;
   border: 2px solid;
   border-color: ${(props) => props.color};

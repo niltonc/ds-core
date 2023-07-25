@@ -1,19 +1,15 @@
 'use client';
 import { useState } from 'react';
 import Button from '@/components/button';
-import Spinner from '@/components/spinner';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
-  // Função para simular um carregamento assíncrono (por exemplo, uma chamada à API)
   const simulateAsyncCall = () => {
     setIsLoading(true);
-
-    // Simulando uma operação assíncrona com setTimeout
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Aqui, após 2 segundos, simulamos que a operação foi concluída e definimos isLoading para false.
+    }, 2000);
   };
   return (
     <main>
@@ -25,15 +21,25 @@ export default function Home() {
           gap: 10
         }}
       >
-        <Button>PRIMARY</Button>
-        <Button variant="outline">OUTLINE</Button>
-        <Button disabled>DISABLED</Button>
-        <Button variant="text">TEXT</Button>
+        <Button>Primary</Button>
         <Button loading={isLoading} onClick={simulateAsyncCall}>
-          TEXT
+          Primary Loading ...
         </Button>
-        ===============
-        <Spinner />
+        <Button disabled>Primary</Button>
+
+        <Button variant="outline">Outline</Button>
+        <Button
+          variant="outline"
+          loading={isLoading}
+          onClick={simulateAsyncCall}
+        >
+          Outline Loading ...
+        </Button>
+        <Button variant="outline" disabled>
+          Outline
+        </Button>
+
+        <Button variant="text">Text</Button>
       </div>
     </main>
   );
