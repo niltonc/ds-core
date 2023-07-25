@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 import * as S from './styles';
+import Spinner from '../spinner';
 
 type ButtonProps = {
   variant?: 'primary' | 'outline' | 'text' | string;
@@ -8,17 +9,18 @@ type ButtonProps = {
   loading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ children, variant, disabled, loading }: ButtonProps) => {
+const Button = ({
+  children,
+  variant,
+  disabled,
+  loading,
+  ...rest
+}: ButtonProps) => {
   return (
-    <S.Button variant={variant} isDisabled={disabled}>
-      {children}
+    <S.Button variant={variant} isDisabled={disabled} {...rest}>
+      {loading ? <Spinner size="13px" color="#fff" /> : children}
     </S.Button>
   );
-};
-
-Button.defaultProps = {
-  variant: 'primary',
-  disabled: false
 };
 
 export default Button;

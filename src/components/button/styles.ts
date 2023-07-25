@@ -1,23 +1,14 @@
 import styled, { css } from 'styled-components';
-import Image from 'next/image';
-
+import { colors } from '@/styles/colors';
 interface ButtonProps {
   variant?: 'primary' | 'outline' | 'text' | string;
   isDisabled?: boolean;
   isLoading?: boolean;
 }
 
-export const colors = {
-  white: '#FFF',
-  black: '#000',
-  cian: '#00FFFF',
-  yellow: '#FFFF00',
-  gray200: '#808080',
-  gray100: '#D3D3D3',
-  violet300: '#4B0082',
-  violet200: '#8A2BE2',
-  violet100: '#B980F0',
-  shadow: 'rgba(0, 0, 0, 0.2)'
+const defaultButtonProps: ButtonProps = {
+  variant: 'primary',
+  isDisabled: false
 };
 
 export const Button = styled.button<ButtonProps>`
@@ -85,3 +76,5 @@ export const Button = styled.button<ButtonProps>`
       }
     `}
 `;
+
+Button.defaultProps = defaultButtonProps;
