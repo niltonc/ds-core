@@ -4,15 +4,20 @@ import './styles.scss';
 type ButtonProps = {
   children?: React.ReactNode;
   variant?: 'primary' | 'outline' | 'text';
+  size?: 'large' | 'middle' | 'small';
+  icon?: any;
 };
 type ButtonHTMLProps = ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonHTMLProps> = ({
-  variant,
   children,
+  variant = 'primary',
+  size = 'small',
+  icon,
   ...rest
 }: ButtonHTMLProps) => {
-  const buttonClassName = `button ${variant}`;
+  const buttonClassName = `button ${variant} ${size}`;
+
   return (
     <button className={buttonClassName} {...rest}>
       {children}

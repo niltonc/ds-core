@@ -14,7 +14,16 @@ $border-radius: 4px;
 .container {
   display: flex;
   position: relative;
-  flex-direction: column;
+  min-width: 20rem;
+  &.small {
+    width: 200px;
+  }
+  &.middle {
+    width: 50%;
+  }
+  &.large {
+    width: 100%;
+  }
 }
 .input {
   border: 1px solid #ccc;
@@ -38,7 +47,7 @@ $border-radius: 4px;
 }
 .icon {
   top: 55%;
-  right: -20px;
+  right: 15px;
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);

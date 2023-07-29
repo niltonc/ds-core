@@ -2,7 +2,7 @@
 
 import Button from '@/components/button';
 import Input from '@/components/input';
-
+import Download from '@/assets/svgs/download.svg';
 export default function Home() {
   return (
     <main>
@@ -14,7 +14,9 @@ export default function Home() {
           gap: 10
         }}
       >
-        <Button variant="primary">Primary Button</Button>
+        <Button variant="primary" icon={Download}>
+          Primary Button
+        </Button>
         <Button variant="primary" disabled>
           Primary Button
         </Button>
@@ -23,9 +25,22 @@ export default function Home() {
           Outline Button
         </Button>
         <Button variant="text">Primary Button</Button>
-        <div style={{ width: 200 }}>
+
+        <Button variant="primary" size="small">
+          Primary Button
+        </Button>
+        <Button variant="primary" size="middle">
+          Primary Button
+        </Button>
+        <Button variant="primary" size="large">
+          Primary Button
+        </Button>
+        <div>
           <Input placeholder="User Name" />
           <Input placeholder="Password" type="password" />
+          <Input placeholder="User Large" Size="large" />
+          <Input placeholder="User Middle" Size="middle" />
+          <Input placeholder="User Smal" Size="small" />
         </div>
       </div>
     </main>
