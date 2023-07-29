@@ -8,6 +8,6 @@ export const Profile = {
   Root: ProfileRoot,
   Image: ProfileImage,
   Title: ProfileName,
-  Social: ProfileSocial,
+  Container: ProfileSocial,
   Icon: ProfileSocialIcon
 };

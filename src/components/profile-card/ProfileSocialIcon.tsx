@@ -1,8 +1,6 @@
-import React, { AnchorHTMLAttributes, ClassAttributes } from 'react';
+import React from 'react';
 import './styles.scss';
 import Image from 'next/image';
-
-type ref = ClassAttributes<HTMLAnchorElement>;
 
 type ProfileSocialProps = {
   icon?: any;

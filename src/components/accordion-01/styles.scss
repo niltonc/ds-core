@@ -1,3 +1,16 @@
+$white: #fff;
+$black: #000;
+$blue: #007bff;
+$yellow: #ffff00;
+$gray200: #808080;
+$gray100: #d3d3d3;
+$violet300: #4b0082;
+$primary: #8a2be2;
+$violet100: #b980f0;
+$shadow: rgba(0, 0, 0, 0.2);
+$border-width: 1px;
+$border-radius: 4px;
+
 .faq-container {
   display: flex;
   flex-direction: column;
@@ -9,16 +22,16 @@ details {
   font-size: 1rem;
   margin: 0 auto;
   width: 100%;
-  background: #f6faff;
+  background: $white;
   border-radius: 8px;
   position: relative;
   max-width: 600px;
-  border: 1px solid #c3deff;
+  border: 1px solid $violet100;
   transition: all 0.3s ease-in-out;
 }
 
 details:hover {
-  border: 1px solid #a4a1ff;
+  border: 1px solid $primary;
 }
 
 summary {
@@ -48,14 +61,14 @@ summary:hover .expand-icon {
 }
 
 .faq-title {
-  color: #1c2035;
+  color: $black;
   width: 90%;
   opacity: 0.65;
   transition: all 250ms ease-in-out;
 }
 
 .faq-content {
-  color: #303651;
+  color: $gray200;
   padding: 0.2em 1em 1em 1em;
   font-weight: 300;
   line-height: 1.5;
