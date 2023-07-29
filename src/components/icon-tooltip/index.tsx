@@ -1,27 +1,26 @@
-import React, { Children, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import './styles.scss';
-import Image from 'next/image';
 
 type SocialMediaIconsProps = {
   type?: 'facebook' | 'twitter' | 'instagram' | 'github' | 'youtube';
   children?: ReactNode;
-  icon?: any;
+  tooltip?: string;
 };
 
-const SocialMediaIconTooltip: React.FC<SocialMediaIconsProps> = ({
+const IconTooltip: React.FC<SocialMediaIconsProps> = ({
   type = 'github',
   children,
-  icon
+  tooltip
 }: SocialMediaIconsProps) => {
   const socialMediaClassName = `icon ${type} `;
   return (
     <ul className="wrapper">
       <li className={socialMediaClassName}>
-        <span className="tooltip">{children}</span>
-        <Image src={icon} width={20} height={20} alt="" />
+        <span className="tooltip">{tooltip}</span>
+        {children}
       </li>
     </ul>
   );
 };
 
-export default SocialMediaIconTooltip;
+export default IconTooltip;

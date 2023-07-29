@@ -5,6 +5,7 @@ import Input from '@/components/input';
 import Button from '@/components/button';
 import { Galery } from '@/components/galery-01';
 import { GaleryCard } from '@/components/galery-02';
+import IconTooltip from '@/components/icon-tooltip';
 import { Profile } from '@/components/profile-card';
 import { Accordion } from '@/components/accordion-01';
 //.jpg
@@ -19,10 +20,8 @@ import Twitter from '@/assets/svgs/twitter-color.svg';
 import Instagram from '@/assets/svgs/instagram-black.svg';
 import Github from '@/assets/svgs/github-color.svg';
 import Youtube from '@/assets/svgs/youtube-color.svg';
-import SocialMediaIconTooltip from '@/components/social-media-tooltip';
 
 export default function Home() {
-  const github = 'https://github.com/niltonc?tab=repositories';
   return (
     <main>
       {/* BUTTON TYPE*/}
@@ -156,15 +155,21 @@ export default function Home() {
           </Profile.Title>
         </Profile.Root>
 
-        <SocialMediaIconTooltip icon={Youtube}>Youtube</SocialMediaIconTooltip>
-        <SocialMediaIconTooltip icon={Facebook}>
-          Facebook
-        </SocialMediaIconTooltip>
-        <SocialMediaIconTooltip icon={Twitter}>Twitter</SocialMediaIconTooltip>
-        <SocialMediaIconTooltip icon={Instagram}>
-          Instagram
-        </SocialMediaIconTooltip>
-        <SocialMediaIconTooltip icon={Github}>Github</SocialMediaIconTooltip>
+        <IconTooltip tooltip="Facebook" type="facebook">
+          <Image src={Facebook} width={20} height={20} alt="" />
+        </IconTooltip>
+        <IconTooltip tooltip="Twitter" type="twitter">
+          <Image src={Twitter} width={20} height={20} alt="" />
+        </IconTooltip>
+        <IconTooltip tooltip="Instagram" type="instagram">
+          <Image src={Instagram} width={20} height={20} alt="" />
+        </IconTooltip>
+        <IconTooltip tooltip="Github">
+          <Image src={Github} width={20} height={20} alt="" />
+        </IconTooltip>
+        <IconTooltip tooltip="Youtube" type="youtube">
+          <Image src={Youtube} width={20} height={20} alt="" />
+        </IconTooltip>
       </div>
     </main>
   );
