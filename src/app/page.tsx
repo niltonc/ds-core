@@ -1,20 +1,8 @@
 'use client';
 
-import Button from '@/components/button';
-import Input from '@/components/input';
-import Download from '@/assets/svgs/download.svg';
-// import { Galery } from '@/components/galery-01';
-import Summer from '@/assets/images/summer.jpg';
-import Spring from '@/assets/images/spring.jpg';
-import Autumn from '@/assets/images/autumn.jpg';
-import Winter from '@/assets/images/winter.jpg';
-import { Galery } from '@/components/galery-02';
-import ProfileImage from '@/assets/images/profile.jpg';
-import Threads from '@/assets/svgs/threads.svg';
-import Linkedin from '@/assets/svgs/linkedin.svg';
-import Twitter from '@/assets/svgs/twitter.svg';
-import Intagram from '@/assets/svgs/instagram.svg';
-import { Profile } from '@/components/profile-card';
+import { Accordion } from '@/components/accordion-01';
+import AccordionContent from '@/components/accordion-01/AccordionContent';
+
 export default function Home() {
   return (
     <main>
@@ -26,32 +14,15 @@ export default function Home() {
           gap: 10
         }}
       >
-        <Profile.Root>
-          <Profile.Image icon={ProfileImage} />
-          <Profile.Social>
-            <Profile.Icon
-              icon={Threads}
-              title="Threads"
-              href="https://www.threads.net/"
-            />
-            <Profile.Icon
-              icon={Linkedin}
-              title="Linkedin"
-              href="https://www.threads.net/"
-            />
-            <Profile.Icon
-              icon={Twitter}
-              title="Twitter"
-              href="https://www.threads.net/"
-            />
-            <Profile.Icon
-              icon={Intagram}
-              title="Intagram"
-              href="https://www.threads.net/"
-            />
-          </Profile.Social>
-          <Profile.Title title="TITLE" subtitle="Subtitle" />
-        </Profile.Root>
+        <Accordion.Root>
+          <Accordion.Title>Title do Accordion</Accordion.Title>
+          <AccordionContent>
+            A expressão Lorem ipsum em design gráfico e editoração é um texto
+            padrão em latim utilizado na produção gráfica para preencher os
+            espaços de texto em publicações para testar e ajustar aspectos
+            visuais antes de utilizar conteúdo real.
+          </AccordionContent>
+        </Accordion.Root>
       </div>
     </main>
   );
