@@ -3,12 +3,12 @@
 import Button from '@/components/button';
 import Input from '@/components/input';
 import Download from '@/assets/svgs/download.svg';
-import { Galery } from '@/components/galery-01';
+// import { Galery } from '@/components/galery-01';
 import Summer from '@/assets/images/summer.jpg';
 import Spring from '@/assets/images/spring.jpg';
 import Autumn from '@/assets/images/autumn.jpg';
 import Winter from '@/assets/images/winter.jpg';
-
+import { Galery } from '@/components/galery-02';
 export default function Home() {
   return (
     <main>
@@ -20,7 +20,7 @@ export default function Home() {
           gap: 10
         }}
       >
-        <Button variant="primary" icon={Download}>
+        {/* <Button variant="primary" icon={Download}>
           Primary Button
         </Button>
         <Button variant="primary" disabled>
@@ -47,7 +47,7 @@ export default function Home() {
           <Input placeholder="User Large" Size="large" />
           <Input placeholder="User Middle" Size="middle" />
           <Input placeholder="User Smal" Size="small" />
-        </div>
+        </div> */}
 
         <div
           style={{
