@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/components/button';
+import Input from '@/components/input';
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
           Outline Button
         </Button>
         <Button variant="text">Primary Button</Button>
+        <div style={{ width: 200 }}>
+          <Input type="password" />
+        </div>
       </div>
     </main>
   );
