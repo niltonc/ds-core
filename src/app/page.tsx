@@ -171,6 +171,9 @@ export default function Home() {
           <Image src={Youtube} width={20} height={20} alt="" />
         </IconTooltip>
       </div>
+      <div>
+        <h4>LOGIN</h4>
+      </div>
     </main>
   );
 }
