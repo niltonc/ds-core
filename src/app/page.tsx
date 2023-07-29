@@ -1,23 +1,28 @@
 'use client';
 
-import { Accordion } from '@/components/accordion-01';
-import Button from '@/components/button';
+import Image from 'next/image';
 import Input from '@/components/input';
+import Button from '@/components/button';
+import { Galery } from '@/components/galery-01';
 import { GaleryCard } from '@/components/galery-02';
-
+import { Profile } from '@/components/profile-card';
+import { Accordion } from '@/components/accordion-01';
+//.jpg
 import Summer from '@/assets/images/summer.jpg';
 import Spring from '@/assets/images/spring.jpg';
 import Winter from '@/assets/images/winter.jpg';
 import Autumn from '@/assets/images/autumn.jpg';
-
+import ProfileIcon from '@/assets/images/profile.jpg';
+//.svg
 import Facebook from '@/assets/svgs/facebook-color.svg';
 import Twitter from '@/assets/svgs/twitter-color.svg';
 import Instagram from '@/assets/svgs/instagram-black.svg';
 import Github from '@/assets/svgs/github-color.svg';
 import Youtube from '@/assets/svgs/youtube-color.svg';
-import { Galery } from '@/components/galery-01';
+import SocialMediaIconTooltip from '@/components/social-media-tooltip';
 
 export default function Home() {
+  const github = 'https://github.com/niltonc?tab=repositories';
   return (
     <main>
       {/* BUTTON TYPE*/}
@@ -101,15 +106,15 @@ export default function Home() {
           <Accordion.Content>NILTON</Accordion.Content>
         </Accordion.Root>
       </div>{' '}
-      <h4>GALERY</h4>
       {/* GALERY TYPE*/}
+      <h4>GALERY</h4>
       <div
         style={{
           gap: 10,
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'space-around',
           marginTop: 20,
-          background: 'yellow'
+          marginBottom: 20
         }}
       >
         <GaleryCard.Root>
@@ -125,6 +130,40 @@ export default function Home() {
           <Galery.Card icon={Spring} size={200} />
           <Galery.Card icon={Autumn} size={200} />
         </Galery.Root>
+      </div>
+      <h4>PROFILE CARD / SOCIAL MEDIA TOOLTIP</h4>
+      <div
+        style={{
+          gap: 10,
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: 20,
+          padding: '20px 80px 20px 80px',
+          background: 'yellow'
+        }}
+      >
+        <Profile.Root size={250}>
+          <Profile.Image>
+            <Image src={ProfileIcon} width={300} height={300} alt="" />
+          </Profile.Image>
+          <Profile.Container>
+            <Profile.Icon icon={Twitter} title="Twitter" href="" />
+            <Profile.Icon icon={Github} title="Github" href="" />
+            <Profile.Icon icon={Youtube} title="Youtube" href="" />
+            <Profile.Icon icon={Facebook} title="Facebook" href="" />
+          </Profile.Container>
+          <Profile.Title title="Profile Title">Profile Title</Profile.Title>
+        </Profile.Root>
+
+        <SocialMediaIconTooltip icon={Youtube}>Youtube</SocialMediaIconTooltip>
+        <SocialMediaIconTooltip icon={Facebook}>
+          Facebook
+        </SocialMediaIconTooltip>
+        <SocialMediaIconTooltip icon={Twitter}>Twitter</SocialMediaIconTooltip>
+        <SocialMediaIconTooltip icon={Instagram}>
+          Instagram
+        </SocialMediaIconTooltip>
+        <SocialMediaIconTooltip icon={Github}>Github</SocialMediaIconTooltip>
       </div>
     </main>
   );

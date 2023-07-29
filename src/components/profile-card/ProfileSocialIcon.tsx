@@ -1,17 +1,17 @@
+import Image from 'next/image';
 import React from 'react';
 import './styles.scss';
-import Image from 'next/image';
 
-type ProfileSocialProps = {
+type ProfileSocialIconProps = {
   icon?: any;
   href?: any;
   title?: string;
 };
-const ProfileSocialIcon: React.FC<ProfileSocialProps> = ({
+const ProfileSocialIcon: React.FC<ProfileSocialIconProps> = ({
   icon,
   href,
   title
-}: ProfileSocialProps) => {
+}: ProfileSocialIconProps) => {
   return (
     <li>
       <a href={href} title={title}>

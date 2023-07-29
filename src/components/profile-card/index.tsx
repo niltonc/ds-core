@@ -1,13 +1,13 @@
-import ProfileImage from './ProfileImage';
-import ProfileName from './ProfileName';
-import ProfileRoot from './ProfileRoot';
-import ProfileSocial from './ProfileSocial';
-import ProfileSocialIcon from './ProfileSocialIcon';
+import Image from './ProfileImage';
+import Title from './ProfileTitle';
+import Root from './ProfileRoot';
+import Container from './ProfileSocialContainer';
+import Icon from './ProfileSocialIcon';
 
 export const Profile = {
-  Root: ProfileRoot,
-  Image: ProfileImage,
-  Title: ProfileName,
-  Container: ProfileSocial,
-  Icon: ProfileSocialIcon
+  Root: Root,
+  Image: Image,
+  Title: Title,
+  Container: Container,
+  Icon: Icon
 };

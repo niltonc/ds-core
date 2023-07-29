@@ -8,7 +8,7 @@ type SocialMediaIconsProps = {
   icon?: any;
 };
 
-const SocialMediaIconsTooltip: React.FC<SocialMediaIconsProps> = ({
+const SocialMediaIconTooltip: React.FC<SocialMediaIconsProps> = ({
   type = 'github',
   children,
   icon
@@ -24,4 +24,4 @@ const SocialMediaIconsTooltip: React.FC<SocialMediaIconsProps> = ({
   );
 };
 
-export default SocialMediaIconsTooltip;
+export default SocialMediaIconTooltip;

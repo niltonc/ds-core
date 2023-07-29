@@ -1,18 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './styles.scss';
-import Image from 'next/image';
 
 type ProfileImageProps = {
-  icon?: any;
+  children?: ReactNode;
 };
 const ProfileImage: React.FC<ProfileImageProps> = ({
-  icon
+  children
 }: ProfileImageProps) => {
-  return (
-    <div className="profile-image">
-      <Image src={icon} width={300} height={300} alt="" />
-    </div>
-  );
+  return <div className="profile-image">{children}</div>;
 };
 
 export default ProfileImage;

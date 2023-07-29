@@ -3,13 +3,17 @@ import './styles.scss';
 
 type ProfileProps = {
   children?: ReactNode;
+  size?: number;
 };
-const ProfileRoot: React.FC<ProfileProps> = ({ children }: ProfileProps) => {
+const ProfileRoot: React.FC<ProfileProps> = ({
+  children,
+  size = 350
+}: ProfileProps) => {
+  const s = `${size}px`;
+  const h = `${size * 1.28}px`;
   return (
-    <div className="container">
-      <div className="profile-wrapper">
-        <div className="profile">{children}</div>
-      </div>
+    <div className="profile" style={{ width: s, height: h }}>
+      {children}
     </div>
   );
 };
