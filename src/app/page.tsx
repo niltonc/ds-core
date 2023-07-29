@@ -15,6 +15,7 @@ import Twitter from '@/assets/svgs/twitter-color.svg';
 import Instagram from '@/assets/svgs/instagram-black.svg';
 import Github from '@/assets/svgs/github-color.svg';
 import Youtube from '@/assets/svgs/youtube-color.svg';
+import { Galery } from '@/components/galery-01';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           flexDirection: 'column'
         }}
       >
+        <h4>BUTTONS</h4>
         <Button>Primary</Button>
         <Button variant="outline">Outline</Button>
         <Button disabled>Primary</Button>
@@ -47,7 +49,6 @@ export default function Home() {
           <Button variant="text">Text</Button>
         </div>
       </div>
-
       {/* INPUT TYPE*/}
       <div
         style={{
@@ -57,6 +58,7 @@ export default function Home() {
           marginTop: 20
         }}
       >
+        <h4>INPUT</h4>
         <Input placeholder="Basic Input" />
         <Input placeholder="Basic Input" disabled />
         <Input type="password" placeholder="Password" />
@@ -80,6 +82,7 @@ export default function Home() {
           flexDirection: 'column'
         }}
       >
+        <h4>ACCORDION</h4>
         <Accordion.Root borderColor="#4b0082">
           <Accordion.Title color="#4b0082">Accordion Title</Accordion.Title>
           <Accordion.Content color="#808080">
@@ -97,7 +100,8 @@ export default function Home() {
           <Accordion.Title>Accordion Title</Accordion.Title>
           <Accordion.Content>NILTON</Accordion.Content>
         </Accordion.Root>
-      </div>
+      </div>{' '}
+      <h4>GALERY</h4>
       {/* GALERY TYPE*/}
       <div
         style={{
@@ -114,6 +118,13 @@ export default function Home() {
           <GaleryCard.Card icon={Spring} />
           <GaleryCard.Card icon={Autumn} />
         </GaleryCard.Root>
+
+        <Galery.Root>
+          <Galery.Card icon={Winter} size={200} />
+          <Galery.Card icon={Summer} size={200} />
+          <Galery.Card icon={Spring} size={200} />
+          <Galery.Card icon={Autumn} size={200} />
+        </Galery.Root>
       </div>
     </main>
   );

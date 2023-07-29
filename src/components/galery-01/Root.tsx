@@ -7,7 +7,7 @@ type GaleryRootProps = {
 const GaleryRoot: React.FC<GaleryRootProps> = ({
   children
 }: GaleryRootProps) => {
-  return <section className="gallery">{children}</section>;
+  return <section className="gallery-one">{children}</section>;
 };
 
 export default GaleryRoot;

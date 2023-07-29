@@ -4,15 +4,19 @@ import './styles.scss';
 
 type GaleryArticleProps = {
   icon?: any;
+  size?: number;
 };
 const GaleryArticle: React.FC<GaleryArticleProps> = ({
-  icon
+  icon,
+  size = 110
 }: GaleryArticleProps) => {
-  const width = 110;
-  const height = 160;
+  const s = `${size}px`;
+  const h = `${size * 1.45}px`;
+  const wi = size * 1.5;
+  const hi = size * 2.5;
   return (
-    <article className="card" style={{ width: width, height: height }}>
-      <Image src={icon} width={200} height={200} alt="" />
+    <article className="card-one" style={{ width: s, height: h }}>
+      <Image src={icon} width={hi} height={wi} alt="" />
     </article>
   );
 };

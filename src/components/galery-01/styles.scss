@@ -2,12 +2,12 @@
   --background-card: #6b626c;
 }
 
-.gallery {
+.gallery-one {
   display: flex;
   left: calc(50% - 330px);
 }
 
-.card {
+.card-one {
   position: relative;
   left: 0px;
   width: 110px;
@@ -19,22 +19,22 @@
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
 }
 
-.card:not(:first-child) {
+.card-one:not(:first-child) {
   margin-left: -45px;
 }
 
-.card:hover {
+.card-one:hover {
   transform: translateY(-16px);
   font-weight: bold;
   cursor: pointer;
 }
 
-.card:hover ~ .card {
+.card-one:hover ~ .card-one {
   left: 55px;
 }
 
-.card img {
-  height: 160px;
+.card-one img {
+  // height: 160px;
   object-fit: cover;
   border-radius: 4px;
 }
