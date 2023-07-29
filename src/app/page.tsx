@@ -24,7 +24,8 @@ export default function Home() {
         </Button>
         <Button variant="text">Primary Button</Button>
         <div style={{ width: 200 }}>
-          <Input type="password" />
+          <Input placeholder="User Name" />
+          <Input placeholder="Password" type="password" />
         </div>
       </div>
     </main>
