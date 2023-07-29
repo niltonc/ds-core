@@ -3,6 +3,12 @@
 import Button from '@/components/button';
 import Input from '@/components/input';
 import Download from '@/assets/svgs/download.svg';
+import { Galery } from '@/components/galery-01';
+import Summer from '@/assets/images/summer.jpg';
+import Spring from '@/assets/images/spring.jpg';
+import Autumn from '@/assets/images/autumn.jpg';
+import Winter from '@/assets/images/winter.jpg';
+
 export default function Home() {
   return (
     <main>
@@ -41,6 +47,21 @@ export default function Home() {
           <Input placeholder="User Large" Size="large" />
           <Input placeholder="User Middle" Size="middle" />
           <Input placeholder="User Smal" Size="small" />
+        </div>
+
+        <div
+          style={{
+            width: '100%',
+            justifyContent: 'center',
+            display: 'flex'
+          }}
+        >
+          <Galery.Root>
+            <Galery.Card icon={Summer} />
+            <Galery.Card icon={Autumn} />
+            <Galery.Card icon={Spring} />
+            <Galery.Card icon={Winter} />
+          </Galery.Root>
         </div>
       </div>
     </main>
