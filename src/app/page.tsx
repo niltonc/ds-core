@@ -15,12 +15,22 @@ export default function Home() {
     <main>
       <div
         style={{
+          gap: 10,
           display: 'flex',
-          flexDirection: 'column',
-          height: 400,
-          gap: 10
+          background: 'yellow',
+          flexDirection: 'column'
         }}
       >
+        <Accordion.Root>
+          <Accordion.Title>Title do Accordion</Accordion.Title>
+          <AccordionContent>
+            A expressão Lorem ipsum em design gráfico e editoração é um texto
+            padrão em latim utilizado na produção gráfica para preencher os
+            espaços de texto em publicações para testar e ajustar aspectos
+            visuais antes de utilizar conteúdo real.
+          </AccordionContent>
+        </Accordion.Root>
+
         <Accordion.Root>
           <Accordion.Title>Title do Accordion</Accordion.Title>
           <AccordionContent>

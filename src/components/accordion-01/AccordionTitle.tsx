@@ -5,14 +5,19 @@ import './styles.scss';
 
 type AccordionProps = {
   children?: React.ReactNode;
+  color?: string;
 };
 
 const AccordionTitle: React.FC<AccordionProps> = ({
-  children
+  children,
+  color = 'black'
 }: AccordionProps) => {
+  const titleColor = ` ${color}`;
   return (
     <summary>
-      <span className="faq-title">{children}</span>
+      <span className="faq-title" style={{ color: titleColor }}>
+        {children}
+      </span>
       <Image
         alt=""
         width={20}
