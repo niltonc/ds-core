@@ -1,32 +1,17 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
-import * as S from './styles';
+import React, { ButtonHTMLAttributes } from 'react';
+import './styles.scss';
 
 type ButtonProps = {
+  children?: React.ReactNode;
   variant?: 'primary' | 'outline' | 'text';
-  children?: ReactNode;
-  loading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  loading = false,
-  ...rest
-}: ButtonProps) => {
+const Button = ({ variant, children, ...rest }: ButtonProps) => {
+  const buttonClassName = `button ${variant}`;
   return (
-    <>
-      {variant === 'primary' && (
-        <S.ButtonPrimary {...rest}>
-          {loading ? <S.Loading size="12" color="#FFF" /> : children}
-        </S.ButtonPrimary>
-      )}
-      {variant === 'outline' && (
-        <S.ButtonOutline {...rest}>
-          {loading ? <S.Loading size="12" /> : children}
-        </S.ButtonOutline>
-      )}
-      {variant === 'text' && <S.ButtonText {...rest}>{children}</S.ButtonText>}
-    </>
+    <button className={buttonClassName} {...rest}>
+      {children}
+    </button>
   );
 };
 

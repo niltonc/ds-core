@@ -1,0 +1,87 @@
+$white: #fff;
+$black: #000;
+$blue: #007bff;
+$yellow: #ffff00;
+$gray200: #808080;
+$gray100: #d3d3d3;
+$violet300: #4b0082;
+$primary: #8a2be2;
+$violet100: #b980f0;
+$shadow: rgba(0, 0, 0, 0.2);
+$border-width: 1px;
+$border-radius: 4px;
+
+.button {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  transition: background-color 0.2s ease;
+  border-radius: $border-radius;
+  &.primary {
+    background-color: $primary;
+    color: $white;
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 1px $shadow;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px lighten($blue, 20);
+      border-inline-end-width: 1px;
+      outline: 0;
+    }
+    &:disabled {
+      color: $gray100;
+      background-color: $gray200;
+      cursor: not-allowed;
+      &:active {
+        transform: translateY(0px);
+        box-shadow: 0 0px 0px;
+      }
+    }
+  }
+  &.outline {
+    background-color: transparent;
+    color: $primary;
+    border: $border-width solid $primary;
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 1px $shadow;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px lighten($blue, 20);
+      border-inline-end-width: 1px;
+      outline: 0;
+    }
+    &:disabled {
+      background-color: transparent;
+      color: $gray200;
+      border: $border-width solid $gray200;
+      cursor: not-allowed;
+      &:active {
+        transform: translateY(0px);
+        box-shadow: 0 0px 0px;
+      }
+    }
+  }
+  &.text {
+    background-color: transparent;
+    color: $gray200;
+    &:active {
+      transform: translateY(1px);
+    }
+    &:hover {
+      transition-duration: 0.1s;
+      background-color: rgba($gray100, 0.6);
+    }
+  }
+}
