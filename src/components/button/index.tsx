@@ -7,12 +7,13 @@ type ButtonProps = {
   size?: 'large' | 'middle' | 'small';
   icon?: any;
 };
+
 type ButtonHTMLProps = ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonHTMLProps> = ({
   children,
   variant = 'primary',
-  size = 'small',
+  size = 'large',
   icon,
   ...rest
 }: ButtonHTMLProps) => {

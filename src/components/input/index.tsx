@@ -7,13 +7,13 @@ import EyeOpen from '@/assets/svgs/eye-open.svg';
 
 type InputProps = {
   Size?: 'large' | 'middle' | 'small';
-  type?: string; // Explicitly specify the type for 'type' prop
+  type?: 'text' | 'password';
 };
 
 type InputHTMLProps = InputProps & InputHTMLAttributes<HTMLInputElement>;
 export const Input: React.FC<InputHTMLProps> = ({
-  Size = 'small',
-  type,
+  Size = 'large',
+  type = 'text',
   ...rest
 }: InputHTMLProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
