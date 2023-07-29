@@ -13,8 +13,8 @@ $border-radius: 4px;
 
 .faq-container {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  // flex-direction: column;
+  // gap: 16px;
 }
 
 details {
@@ -71,6 +71,7 @@ summary:hover .expand-icon {
   padding: 0.2em 1em 1em 1em;
   font-weight: 300;
   line-height: 1.5;
+  text-align: justify;
 }
 
 .expand-icon {

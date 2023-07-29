@@ -12,10 +12,10 @@ const AccordionTitle: React.FC<AccordionProps> = ({
   children,
   color = 'black'
 }: AccordionProps) => {
-  const titleColor = ` ${color}`;
+  const colors = ` ${color}`;
   return (
     <summary>
-      <span className="faq-title" style={{ color: titleColor }}>
+      <span className="faq-title" style={{ color: colors }}>
         {children}
       </span>
       <Image

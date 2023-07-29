@@ -1,21 +1,20 @@
 'use client';
 
 import { Accordion } from '@/components/accordion-01';
-import AccordionContent from '@/components/accordion-01/AccordionContent';
-import SocialMediaIcons from '@/components/social-media-tooltip';
+import Button from '@/components/button';
+import Input from '@/components/input';
+import { GaleryCard } from '@/components/galery-02';
+
+import Summer from '@/assets/images/summer.jpg';
+import Spring from '@/assets/images/spring.jpg';
+import Winter from '@/assets/images/winter.jpg';
+import Autumn from '@/assets/images/autumn.jpg';
+
 import Facebook from '@/assets/svgs/facebook-color.svg';
 import Twitter from '@/assets/svgs/twitter-color.svg';
 import Instagram from '@/assets/svgs/instagram-black.svg';
 import Github from '@/assets/svgs/github-color.svg';
 import Youtube from '@/assets/svgs/youtube-color.svg';
-import Button from '@/components/button';
-import Input from '@/components/input';
-import { Galery } from '@/components/galery-01';
-
-import Summer from '@/assets/images/autumn.jpg';
-import Spring from '@/assets/images/spring.jpg';
-import Winter from '@/assets/images/winter.jpg';
-import Autumn from '@/assets/images/autumn.jpg';
 
 export default function Home() {
   return (
@@ -72,23 +71,49 @@ export default function Home() {
           <Input placeholder="Basic Input" Size="small" type="password" />
         </div>
       </div>
+      {/* ACCORDION */}
+      <div
+        style={{
+          display: 'flex',
+          marginTop: 20,
+          gap: 15,
+          flexDirection: 'column'
+        }}
+      >
+        <Accordion.Root borderColor="#4b0082">
+          <Accordion.Title color="#4b0082">Accordion Title</Accordion.Title>
+          <Accordion.Content color="#808080">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Accordion.Content>
+        </Accordion.Root>
 
+        <Accordion.Root>
+          <Accordion.Title>Accordion Title</Accordion.Title>
+          <Accordion.Content>NILTON</Accordion.Content>
+        </Accordion.Root>
+      </div>
       {/* GALERY TYPE*/}
       <div
         style={{
           gap: 10,
           display: 'flex',
           justifyContent: 'center',
-          background: 'yellow',
-          marginTop: 20
+          marginTop: 20,
+          background: 'yellow'
         }}
       >
-        <Galery.Root>
-          <Galery.Card icon={Summer} />
-          <Galery.Card icon={Winter} />
-          <Galery.Card icon={Spring} />
-          <Galery.Card icon={Autumn} />
-        </Galery.Root>
+        <GaleryCard.Root>
+          <GaleryCard.Card icon={Winter} />
+          <GaleryCard.Card icon={Summer} />
+          <GaleryCard.Card icon={Spring} />
+          <GaleryCard.Card icon={Autumn} />
+        </GaleryCard.Root>
       </div>
     </main>
   );

@@ -3,12 +3,19 @@ import './styles.scss';
 
 type AccordionProps = {
   children?: React.ReactNode;
+  color?: string;
 };
 
 const AccordionContent: React.FC<AccordionProps> = ({
-  children
+  children,
+  color = 'grey'
 }: AccordionProps) => {
-  return <div className="faq-content">{children}</div>;
+  const colors = ` ${color}`;
+  return (
+    <div className="faq-content" style={{ color: colors }}>
+      {children}
+    </div>
+  );
 };
 
 export default AccordionContent;

@@ -3,14 +3,17 @@ import './styles.scss';
 
 type AccordionProps = {
   children?: React.ReactNode;
+  borderColor?: string;
 };
 
 const AccordionRoot: React.FC<AccordionProps> = ({
-  children
+  children,
+  borderColor = 'black'
 }: AccordionProps) => {
+  const color = ` ${borderColor}`;
   return (
     <div className="faq-container">
-      <details>{children}</details>
+      <details style={{ borderColor: color }}>{children}</details>
     </div>
   );
 };

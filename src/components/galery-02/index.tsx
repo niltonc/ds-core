@@ -1,7 +1,7 @@
-import GaleryRoot from './GaleryRoot';
-import GaleryArticle from './GaleryArticle';
+import GaleryRoot from './Root';
+import GaleryArticle from './Article';
 
-export const Galery = {
+export const GaleryCard = {
   Root: GaleryRoot,
   Card: GaleryArticle
 };
