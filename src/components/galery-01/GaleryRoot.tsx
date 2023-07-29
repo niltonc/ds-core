@@ -1,10 +1,12 @@
 import React, { ReactNode } from 'react';
 import './styles.scss';
 
-type GaleryProps = {
+type GaleryRootProps = {
   children?: ReactNode;
 };
-const GaleryRoot: React.FC<GaleryProps> = ({ children }: GaleryProps) => {
+const GaleryRoot: React.FC<GaleryRootProps> = ({
+  children
+}: GaleryRootProps) => {
   return <section className="gallery">{children}</section>;
 };
 
