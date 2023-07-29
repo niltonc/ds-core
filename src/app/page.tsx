@@ -138,8 +138,7 @@ export default function Home() {
           display: 'flex',
           justifyContent: 'space-between',
           marginTop: 20,
-          padding: '20px 80px 20px 80px',
-          background: 'yellow'
+          padding: '20px 80px 20px 80px'
         }}
       >
         <Profile.Root size={250}>
@@ -152,7 +151,9 @@ export default function Home() {
             <Profile.Icon icon={Youtube} title="Youtube" href="" />
             <Profile.Icon icon={Facebook} title="Facebook" href="" />
           </Profile.Container>
-          <Profile.Title title="Profile Title">Profile Title</Profile.Title>
+          <Profile.Title title="Profile Title" color="#333">
+            Profile Title
+          </Profile.Title>
         </Profile.Root>
 
         <SocialMediaIconTooltip icon={Youtube}>Youtube</SocialMediaIconTooltip>
