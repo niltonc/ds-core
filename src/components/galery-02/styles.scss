@@ -2,13 +2,6 @@
   --background: #3c343d;
 }
 
-.background {
-  background-color: var(--background);
-  display: grid;
-  place-items: center;
-  height: 100vh;
-}
-
 .gallery {
   display: flex;
   flex-wrap: wrap;
