@@ -21,15 +21,15 @@ export const Input: React.FC<InputHTMLProps> = ({
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
   };
-  const containerClassName = `container ${Size}`;
+  const containerClassName = `containerds ${Size}`;
   return (
     <div className={containerClassName}>
       <input
-        className="input"
+        className="inputds"
         type={isPasswordVisible ? 'text' : type}
         {...rest}
       />
-      <div className="icon" onClick={togglePasswordVisibility}>
+      <div className="iconds" onClick={togglePasswordVisibility}>
         {type === 'password' && (
           <>
             {isPasswordVisible ? (

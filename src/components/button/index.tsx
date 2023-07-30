@@ -17,7 +17,7 @@ const Button: React.FC<ButtonHTMLProps> = ({
   icon,
   ...rest
 }: ButtonHTMLProps) => {
-  const buttonClassName = `button ${variant} ${size}`;
+  const buttonClassName = `buttonds ${variant} ${size}`;
 
   return (
     <button className={buttonClassName} {...rest}>
