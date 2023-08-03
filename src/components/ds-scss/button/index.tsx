@@ -15,7 +15,7 @@ const Button: React.FC<ButtonHTMLProps> = ({
   size = 'large',
   ...rest
 }: ButtonHTMLProps) => {
-  const buttonClassName = `buttonds ${variant} ${size}`;
+  const buttonClassName = `button ${variant} ${size}`;
 
   return (
     <button className={buttonClassName} {...rest}>

@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, useState } from 'react';
 import Image from 'next/image';
-import './styles.scss';
+import './_styles.scss';
 
 import EyeClosed from '@/assets/svgs/eye-closed.svg';
 import EyeOpen from '@/assets/svgs/eye-open.svg';
@@ -21,15 +21,15 @@ export const Input: React.FC<InputHTMLProps> = ({
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
   };
-  const containerClassName = `containerds ${Size}`;
+  const containerClassName = `container ${Size}`;
   return (
     <div className={containerClassName}>
       <input
-        className="inputds"
+        className="input"
         type={isPasswordVisible ? 'text' : type}
         {...rest}
       />
-      <div className="iconds" onClick={togglePasswordVisibility}>
+      <div className="icon" onClick={togglePasswordVisibility}>
         {type === 'password' && (
           <>
             {isPasswordVisible ? (

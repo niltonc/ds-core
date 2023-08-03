@@ -1,12 +1,14 @@
 'use client';
 
-import Button from '@/components/button';
+import Button from '@/components/ds-scss/button';
+import Input from '@/components/ds-scss/input';
+import Select from '@/components/ds-scss/select';
 
 export default function Home() {
   return (
     <div
       style={{
-        gap: 10,
+        gap: 5,
         flex: 1,
         display: 'flex',
         flexDirection: 'column'
@@ -25,6 +27,13 @@ export default function Home() {
       <Button size="small">Small Button</Button>
 
       <h3>Input / TextField</h3>
+      <Input placeholder="Basic Input / large" />
+      <Input placeholder="Password Input" type="password" />
+      <Input Size="middle" placeholder="Middle" />
+      <Input Size="small" placeholder="Small" />
+
+      <h3>Select</h3>
+      <Select />
     </div>
   );
 }
