@@ -12,12 +12,18 @@ import Twitter from '@/assets/svgs/twitter-color.svg';
 import Instagram from '@/assets/svgs/instagram-black.svg';
 import Github from '@/assets/svgs/github-color.svg';
 import Youtube from '@/assets/svgs/youtube-color.svg';
-import ZoomOnHover from '@/template/ZoomOnHover';
+import Button from '@/components/button';
 
 export default function Home() {
   return (
-    <main>
-      <ZoomOnHover />
+    <main style={{ gap: 10 }}>
+      <Button>PRIMARY</Button>
+      <Button disabled>PRIMARY</Button>
+      <Button variant="outline">OUTLINE</Button>
+      <Button disabled variant="outline">
+        OUTLINE
+      </Button>
+      <Button variant="text">TEXT</Button>
     </main>
   );
 }

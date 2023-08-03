@@ -1,49 +1,44 @@
-// // scss-docs-start gray-color-variables
-// $white: #fff !default;
-// $gray-100: #f8f9fa !default;
-// $gray-200: #e9ecef !default;
-// $gray-300: #dee2e6 !default;
-// $gray-400: #ced4da !default;
-// $gray-500: #adb5bd !default;
-// $gray-600: #6c757d !default;
-// $gray-700: #495057 !default;
-// $gray-800: #343a40 !default;
-// $gray-900: #212529 !default;
-// $black: #000 !default;
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
 
-// // scss-docs-start color-variables
-// $blue: #0d6efd !default;
-// $indigo: #6610f2 !default;
-// $purple: #6f42c1 !default;
-// $pink: #d63384 !default;
-// $red: #dc3545 !default;
-// $orange: #fd7e14 !default;
-// $yellow: #ffc107 !default;
-// $green: #198754 !default;
-// $teal: #20c997 !default;
-// $cyan: #0dcaf0 !default;
+$blue: #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #198754 !default;
+$teal: #20c997 !default;
+$cyan: #0dcaf0 !default;
 
-// // fusv-disable
-// $blue-100: tint-color($blue, 80%) !default;
-// $blue-200: tint-color($blue, 60%) !default;
-// $blue-300: tint-color($blue, 40%) !default;
-// $blue-400: tint-color($blue, 20%) !default;
-// $blue-500: $blue !default;
-// $blue-600: shade-color($blue, 20%) !default;
-// $blue-700: shade-color($blue, 40%) !default;
-// $blue-800: shade-color($blue, 60%) !default;
-// $blue-900: shade-color($blue, 80%) !default;
+$indigo-100: tint-color($indigo, 80%) !default;
+$indigo-200: tint-color($indigo, 60%) !default;
+$indigo-300: tint-color($indigo, 40%) !default;
+$indigo-400: tint-color($indigo, 20%) !default;
+$indigo-500: $indigo !default;
+$indigo-600: shade-color($indigo, 20%) !default;
+$indigo-700: shade-color($indigo, 40%) !default;
+$indigo-800: shade-color($indigo, 60%) !default;
+$indigo-900: shade-color($indigo, 80%) !default;
 
-// $indigo-100: tint-color($indigo, 80%) !default;
-// $indigo-200: tint-color($indigo, 60%) !default;
-// $indigo-300: tint-color($indigo, 40%) !default;
-// $indigo-400: tint-color($indigo, 20%) !default;
-// $indigo-500: $indigo !default;
-// $indigo-600: shade-color($indigo, 20%) !default;
-// $indigo-700: shade-color($indigo, 40%) !default;
-// $indigo-800: shade-color($indigo, 60%) !default;
-// $indigo-900: shade-color($indigo, 80%) !default;
+$border-width: 1px !default;
 
+$border-radius: 0.275rem !default;
+$border-radius-sm: 0.25rem !default;
+$border-radius-lg: 0.5rem !default;
+$border-radius-xl: 1rem !default;
+$border-radius-xxl: 2rem !default;
+$border-radius-pill: 50rem !default;
 // $purple-100: tint-color($purple, 80%) !default;
 // $purple-200: tint-color($purple, 60%) !default;
 // $purple-300: tint-color($purple, 40%) !default;
@@ -173,15 +168,6 @@
 // $border-color: $gray-300 !default;
 // $border-color-translucent: rgba($black, 0.175) !default;
 // // scss-docs-end border-variables
-
-// // scss-docs-start border-radius-variables
-// $border-radius: 0.375rem !default;
-// $border-radius-sm: 0.25rem !default;
-// $border-radius-lg: 0.5rem !default;
-// $border-radius-xl: 1rem !default;
-// $border-radius-xxl: 2rem !default;
-// $border-radius-pill: 50rem !default;
-// // scss-docs-end border-radius-variables
 
 // // scss-docs-start box-shadow-variables
 // $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;

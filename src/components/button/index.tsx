@@ -5,7 +5,6 @@ type ButtonProps = {
   children?: React.ReactNode;
   variant?: 'primary' | 'outline' | 'text';
   size?: 'large' | 'middle' | 'small';
-  icon?: any;
 };
 
 type ButtonHTMLProps = ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -14,7 +13,6 @@ const Button: React.FC<ButtonHTMLProps> = ({
   children,
   variant = 'primary',
   size = 'large',
-  icon,
   ...rest
 }: ButtonHTMLProps) => {
   const buttonClassName = `buttonds ${variant} ${size}`;
