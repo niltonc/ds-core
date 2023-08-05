@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 
 type InputProps = {
-  Size?: 'large' | 'middle' | 'small';
+  variant?: 'large' | 'middle' | 'small';
   type?: 'text' | 'password';
 };
 

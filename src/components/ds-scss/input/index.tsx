@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { InputHTMLProps } from './types';
 import EyeClosed from '@/assets/svgs/eye-closed.svg';
 import EyeOpen from '@/assets/svgs/eye-open.svg';
-import './input.module.scss';
+import styles from './input.module.scss';
 
 export const Input: React.FC<InputHTMLProps> = ({
-  Size = 'large',
+  variant = 'large',
   type = 'text',
   ...rest
 }: InputHTMLProps) => {
@@ -15,15 +15,15 @@ export const Input: React.FC<InputHTMLProps> = ({
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
   };
-  const containerClassName = `container ${Size}`;
+
   return (
-    <div className={containerClassName}>
+    <div className={`${styles.container} ${styles[variant]}`}>
       <input
-        className="input"
+        className={`${styles.input}`}
         type={isPasswordVisible ? 'text' : type}
         {...rest}
       />
-      <div className="icon" onClick={togglePasswordVisibility}>
+      <div className={`${styles.icon}`} onClick={togglePasswordVisibility}>
         {type === 'password' && (
           <>
             {isPasswordVisible ? (

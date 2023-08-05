@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/ds-scss/button';
+import Button from '@/components/ds-scss/button/import_exemples';
 import Input from '@/components/ds-scss/input';
 import CustomSelect from '@/components/ds-scss/select';
 
@@ -34,8 +34,8 @@ export default function Home() {
       <h3>Input / TextField</h3>
       <Input placeholder="Basic Input / large" />
       <Input placeholder="Password Input" type="password" />
-      <Input Size="middle" placeholder="Middle" />
-      <Input Size="small" placeholder="Small" />
+      <Input variant="middle" placeholder="Middle" />
+      <Input variant="small" placeholder="Small" />
 
       <h3>Select</h3>
       <CustomSelect options={Options} onSelect={handleSelect} />

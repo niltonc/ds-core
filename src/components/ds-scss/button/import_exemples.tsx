@@ -1,17 +1,20 @@
 import React from 'react';
 import { ButtonHTMLProps } from './types';
-import './button.module.scss';
+// import './button.module.scss';
+import styles from './button.module.scss';
 
 const Button: React.FC<ButtonHTMLProps> = ({
   children,
   variant = 'primary',
   size = 'large',
+  disabled,
   ...rest
 }: ButtonHTMLProps) => {
-  const buttonClassName = `button ${variant} ${size}`;
-
   return (
-    <button className={buttonClassName} {...rest}>
+    <button
+      className={`${styles.button} ${styles[variant]} ${styles[size]}`}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
