@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { InputHTMLProps } from './types';
 import EyeClosed from '@/assets/svgs/eye-closed.svg';
 import EyeOpen from '@/assets/svgs/eye-open.svg';
-import './_input.scss';
+import './input.module.scss';
 
 export const Input: React.FC<InputHTMLProps> = ({
   Size = 'large',
