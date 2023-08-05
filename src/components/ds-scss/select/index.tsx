@@ -1,37 +1,44 @@
-import { useState, useEffect } from 'react';
-import './_styles.scss';
+import React, { useState } from 'react';
+import styles from './select.module.scss';
+import { CustomSelectProps, Option } from './types';
 
-interface Option {
-  id: number | string;
-  value: string;
-  label: string;
-}
+const Select: React.FC<CustomSelectProps> = ({ options, onSelect }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState('');
 
-const options: Option[] = [
-  { id: 1, value: 'option1', label: 'Opção 1' },
-  { id: 2, value: 'option2', label: 'Opção 2' },
-  { id: 3, value: 'option3', label: 'Opção 3' }
-];
+  const handleSelect = (option: Option) => {
+    setSelectedValue(option.value);
+    onSelect(option.value);
+    setIsOpen(false);
+  };
 
-const Select: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<string>('');
-
-  useEffect(() => {
-    setSelectedOption(options[0]?.value);
-  }, []);
-
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedOption(event.target.value);
+  const handleToggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <select value={selectedOption} onChange={handleSelectChange}>
-      {options.map((option) => (
-        <option key={option.id} value={option.value} className="custom-option">
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <div className={styles.customSelect}>
+      <div className={styles.selectField} onClick={handleToggleDropdown}>
+        {selectedValue ? (
+          options.find((option) => option.value === selectedValue)?.label
+        ) : (
+          <span>Selecione uma opção</span>
+        )}
+      </div>
+      {isOpen && (
+        <div className={styles.selectDropdown}>
+          {options.map((option) => (
+            <div
+              key={option.value}
+              className={styles.selectOption}
+              onClick={() => handleSelect(option)}
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 

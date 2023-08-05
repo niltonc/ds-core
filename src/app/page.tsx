@@ -2,9 +2,14 @@
 
 import Button from '@/components/ds-scss/button';
 import Input from '@/components/ds-scss/input';
-import Select from '@/components/ds-scss/select';
+import CustomSelect from '@/components/ds-scss/select';
+
+import { Options } from '@/mock/select-mock';
 
 export default function Home() {
+  const handleSelect = (value: string) => {
+    console.log('Selected:', value);
+  };
   return (
     <div
       style={{
@@ -33,7 +38,7 @@ export default function Home() {
       <Input Size="small" placeholder="Small" />
 
       <h3>Select</h3>
-      <Select />
+      <CustomSelect options={Options} onSelect={handleSelect} />
     </div>
   );
 }

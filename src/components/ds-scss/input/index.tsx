@@ -1,16 +1,10 @@
-import { InputHTMLAttributes, useState } from 'react';
 import Image from 'next/image';
-import './_styles.scss';
-
+import React, { useState } from 'react';
+import { InputHTMLProps } from './types';
 import EyeClosed from '@/assets/svgs/eye-closed.svg';
 import EyeOpen from '@/assets/svgs/eye-open.svg';
+import './_input.scss';
 
-type InputProps = {
-  Size?: 'large' | 'middle' | 'small';
-  type?: 'text' | 'password';
-};
-
-type InputHTMLProps = InputProps & InputHTMLAttributes<HTMLInputElement>;
 export const Input: React.FC<InputHTMLProps> = ({
   Size = 'large',
   type = 'text',

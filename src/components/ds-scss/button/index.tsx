@@ -1,13 +1,6 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import './_styles.scss';
-
-type ButtonProps = {
-  children?: React.ReactNode;
-  variant?: 'primary' | 'outline' | 'text';
-  size?: 'large' | 'middle' | 'small';
-};
-
-type ButtonHTMLProps = ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
+import React from 'react';
+import { ButtonHTMLProps } from './types';
+import './_button.scss';
 
 const Button: React.FC<ButtonHTMLProps> = ({
   children,
