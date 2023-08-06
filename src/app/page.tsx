@@ -8,6 +8,7 @@ import { Row } from '@/components/ds-scss/grid/row';
 import Input from '@/components/ds-scss/input';
 import MultipleSelect from '@/components/ds-scss/multiple-select';
 import CustomSelect from '@/components/ds-scss/select';
+import Switch from '@/components/ds-scss/switch';
 import { routes } from '@/mock/breadcrumb';
 
 import { Options } from '@/mock/select-mock';
@@ -15,6 +16,10 @@ import { Options } from '@/mock/select-mock';
 export default function Home() {
   const handleSelect = (value: string) => {
     console.log('Selected:', value);
+  };
+
+  const onChange = (checked: any) => {
+    console.log(`switch to ${checked}`);
   };
 
   return (
@@ -103,6 +108,8 @@ export default function Home() {
       </div>
       <h3>breadcrumb</h3>
       <Breadcrumb routes={routes} />
+      <h3>Switch</h3>
+      <Switch defaultChecked={true} onChange={onChange} />
     </div>
   );
 }
