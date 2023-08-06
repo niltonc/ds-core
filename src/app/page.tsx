@@ -2,6 +2,7 @@
 
 import Button from '@/components/ds-scss/button';
 import Input from '@/components/ds-scss/input';
+import MultipleSelect from '@/components/ds-scss/multiple-select';
 import CustomSelect from '@/components/ds-scss/select';
 
 import { Options } from '@/mock/select-mock';
@@ -44,7 +45,11 @@ export default function Home() {
         onSelect={handleSelect}
         placeholder="Selecione uma opção"
       />
-
+      <MultipleSelect
+        options={Options}
+        onSelect={handleSelect}
+        placeholder="Multiple select"
+      />
       <Button>oi</Button>
       <Button>oi</Button>
       <Button>oi</Button>
