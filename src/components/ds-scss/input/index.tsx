@@ -12,12 +12,14 @@ export const Input: React.FC<InputHTMLProps> = ({
 }: InputHTMLProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+  const Container = `${styles.container} ${styles[variant]}`;
+
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
   };
 
   return (
-    <div className={`${styles.container} ${styles[variant]}`}>
+    <div className={Container}>
       <input
         className={`${styles.input}`}
         type={isPasswordVisible ? 'text' : type}

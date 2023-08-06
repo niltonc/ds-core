@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/ds-scss/button/import_exemples';
+import Button from '@/components/ds-scss/button';
 import Input from '@/components/ds-scss/input';
 import CustomSelect from '@/components/ds-scss/select';
 

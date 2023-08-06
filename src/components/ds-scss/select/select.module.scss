@@ -5,6 +5,10 @@
   display: flex;
   min-width: 20rem;
 
+  span {
+    color: #636574;
+  }
+
   .selectField {
     border: 1px solid $gray-500;
     width: 100%;
@@ -29,7 +33,7 @@
   .selectDropdown {
     position: absolute;
     top: calc(40px + 5px);
-    width: 100%;
+    width: calc(100% - 2px);
     max-height: 150px;
     overflow-y: auto;
     background: $white;
@@ -37,6 +41,7 @@
     border: 1px solid $gray-500;
     border-radius: $border-radius;
     z-index: 2;
+
     &::-webkit-scrollbar {
       width: 5px;
     }
