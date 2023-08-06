@@ -31,8 +31,6 @@
   }
   &:focus {
     border-color: $indigo;
-  }
-  &:focus {
     box-shadow: 0 0 0 2px lighten($indigo, 20);
     border-inline-end-width: 1px;
     outline: 0;

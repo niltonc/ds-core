@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './select.module.scss';
 import { CustomSelectProps, Option } from './types';
+import { useOutsideClick } from '@/hooks/useOutSideClick';
 
-const Select: React.FC<CustomSelectProps> = ({ options, onSelect }) => {
+const Select: React.FC<CustomSelectProps> = ({
+  options,
+  onSelect,
+  placeholder
+}) => {
+  const ref = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('');
 
@@ -15,14 +21,23 @@ const Select: React.FC<CustomSelectProps> = ({ options, onSelect }) => {
   const handleToggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  const handleClickOutside = () => {
+    setIsOpen(false);
+  };
+
+  useOutsideClick(ref, handleClickOutside);
 
   return (
-    <div className={styles.customSelect}>
-      <div className={styles.selectField} onClick={handleToggleDropdown}>
+    <div className={styles.container}>
+      <div
+        ref={ref}
+        className={styles.selectField}
+        onClick={handleToggleDropdown}
+      >
         {selectedValue ? (
           options.find((option) => option.value === selectedValue)?.label
         ) : (
-          <span>Selecione uma opção</span>
+          <span>{placeholder}</span>
         )}
       </div>
       {isOpen && (

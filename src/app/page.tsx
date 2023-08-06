@@ -10,6 +10,7 @@ export default function Home() {
   const handleSelect = (value: string) => {
     console.log('Selected:', value);
   };
+
   return (
     <div
       style={{
@@ -38,7 +39,22 @@ export default function Home() {
       <Input variant="small" placeholder="Small" />
 
       <h3>Select</h3>
-      <CustomSelect options={Options} onSelect={handleSelect} />
+      <CustomSelect
+        options={Options}
+        onSelect={handleSelect}
+        placeholder="Selecione uma opção"
+      />
+
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
+      <Button>oi</Button>
     </div>
   );
 }

@@ -5,5 +5,6 @@ export interface Option {
 
 export type CustomSelectProps = {
   options: Option[];
+  placeholder?: string;
   onSelect: (value: string) => void;
 };
