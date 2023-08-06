@@ -7,6 +7,7 @@
   background-color: #ccc;
   border-radius: 15px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 
   &::before {
     content: '';
@@ -17,7 +18,7 @@
     height: 26px;
     background-color: #fff;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, width 0.3s ease; // Added width transition
   }
 
   &.active {
@@ -25,6 +26,7 @@
 
     &::before {
       transform: translateX(20px);
+      width: 60px; // Expands the ball's width
     }
   }
 }
