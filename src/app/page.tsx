@@ -1,5 +1,7 @@
 'use client';
 
+import ExpandCard from '@/components/ExpandCard';
+import VideoCard from '@/components/video-card-hover';
 import Breadcrumb from '@/components/ds-scss/breadcrumb';
 import Button from '@/components/ds-scss/button';
 import Divider from '@/components/ds-scss/divider';
@@ -12,6 +14,11 @@ import Switch from '@/components/ds-scss/switch';
 import { routes } from '@/mock/breadcrumb';
 
 import { Options } from '@/mock/select-mock';
+import SlidingTabs from '@/components/sliding-tabs';
+import Form from '@/components/signup-form';
+import AccordionItem from '@/components/react-faq-accordion';
+import { useEffect, useState } from 'react';
+import DetailsCard from '@/components/details-card';
 
 export default function Home() {
   const handleSelect = (value: string) => {
@@ -22,6 +29,31 @@ export default function Home() {
     console.log(`switch to ${checked}`);
   };
 
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems([
+      {
+        id: 1,
+        title: 'Why is the moon sometimes out during the day?',
+        content:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+      },
+      {
+        id: 2,
+        title: 'What is the meaning of life?',
+        content:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+      },
+      {
+        id: 3,
+        title: 'How do I get started with React?',
+        content:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+      }
+    ]);
+  }, []);
+
   return (
     <div
       style={{
@@ -31,7 +63,7 @@ export default function Home() {
         flexDirection: 'column'
       }}
     >
-      <h3>Button</h3>
+      {/* <h3>Button</h3>
       <Button>PRIMARY</Button>
       <Button disabled>PRIMARY</Button>
       <Button variant="outline">OUTLINE</Button>
@@ -109,7 +141,21 @@ export default function Home() {
       <h3>breadcrumb</h3>
       <Breadcrumb routes={routes} />
       <h3>Switch</h3>
-      <Switch defaultChecked={true} onChange={onChange} />
+      <Switch defaultChecked={true} onChange={onChange} /> */}
+
+      {/* <ExpandCard /> */}
+
+      {/* <VideoCard /> */}
+
+      {/* <Carousel /> */}
+      {/* <SwitchButton /> */}
+      {/* <SubscriptionCard /> */}
+      {/* <Header /> */}
+      {/* <Header /> */}
+      {/* <SlidingTabs /> */}
+      {/* <Form /> */}
+      {/* <AccordionItem items={items} /> */}
+      <DetailsCard />
     </div>
   );
 }
