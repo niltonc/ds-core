@@ -18,7 +18,8 @@ import SlidingTabs from '@/components/sliding-tabs';
 import Form from '@/components/signup-form';
 import AccordionItem from '@/components/react-faq-accordion';
 import { useEffect, useState } from 'react';
-import DetailsCard from '@/components/details-card';
+import { Timeline } from '@/components/ui-component-kit/timeline';
+import Tabs from '@/components/ui-component-kit/tab-mutiple-select-card';
 
 export default function Home() {
   const handleSelect = (value: string) => {
@@ -29,31 +30,6 @@ export default function Home() {
     console.log(`switch to ${checked}`);
   };
 
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    setItems([
-      {
-        id: 1,
-        title: 'Why is the moon sometimes out during the day?',
-        content:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-      },
-      {
-        id: 2,
-        title: 'What is the meaning of life?',
-        content:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-      },
-      {
-        id: 3,
-        title: 'How do I get started with React?',
-        content:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-      }
-    ]);
-  }, []);
-
   return (
     <div
       style={{
@@ -63,99 +39,90 @@ export default function Home() {
         flexDirection: 'column'
       }}
     >
-      {/* <h3>Button</h3>
-      <Button>PRIMARY</Button>
-      <Button disabled>PRIMARY</Button>
-      <Button variant="outline">OUTLINE</Button>
-      <Button disabled variant="outline">
-        OUTLINE
-      </Button>
-      <Button variant="text">TEXT</Button>
-      <Button size="large">Large Button</Button>
-      <Button size="middle">Middle Button</Button>
-      <Button size="small">Small Button</Button>
-      <h3>Input / TextField</h3>
-      <Input placeholder="Basic Input / large" />
-      <Input placeholder="Password Input" type="password" />
-      <Input variant="middle" placeholder="Middle" />
-      <Input variant="small" placeholder="Small" />
-      <h3>Select / Multiple Select</h3>
-      <CustomSelect
-        options={Options}
-        onSelect={handleSelect}
-        placeholder="Selecione uma opção"
-      />
-      <MultipleSelect
-        options={Options}
-        onSelect={handleSelect}
-        placeholder="Multiple select"
-      />
-      <h3>Divier</h3>
-      solid:
-      <Divider />
-      dotted:
-      <Divider type="dotted" />
-      dashed:
-      <Divider type="dashed" />
-      <h3>Grid</h3>
-      <div>
-        <Row style={{ background: 'purple' }}>
-          <Col span={24} align="flex-end" alignVertical="bottom" order="last">
-            col
-          </Col>
-        </Row>
-        <Row>
-          <Col span={12} style={{ background: 'yellow' }}>
-            col-12
-          </Col>
-          <Col span={12} style={{ background: 'red' }}>
-            col-12
-          </Col>
-        </Row>
-        <Row>
-          <Col span={8} style={{ background: 'blue' }}>
-            col-8
-          </Col>
-          <Col span={8} style={{ background: 'green' }}>
-            col-8
-          </Col>
-          <Col span={8} style={{ background: 'yellow' }}>
-            col-8
-          </Col>
-        </Row>
-        <Row>
-          <Col span={6} style={{ background: 'purple' }}>
-            col-6
-          </Col>
-          <Col span={6} style={{ background: 'red' }}>
-            col-6
-          </Col>
-          <Col span={6} style={{ background: 'blue' }}>
-            col-6
-          </Col>
-          <Col span={6} style={{ background: 'green' }}>
-            col-6
-          </Col>
-        </Row>
-      </div>
-      <h3>breadcrumb</h3>
+      {/* <div>
+        <h3>Button</h3>
+        <Button>PRIMARY</Button>
+        <Button disabled>PRIMARY</Button>
+        <Button variant="outline">OUTLINE</Button>
+        <Button disabled variant="outline">
+          OUTLINE
+        </Button>
+        <Button variant="text">TEXT</Button>
+        <Button size="large">Large Button</Button>
+        <Button size="middle">Middle Button</Button>
+        <Button size="small">Small Button</Button>
+        <h3>Input / TextField</h3>
+        <Input placeholder="Basic Input / large" />
+        <Input placeholder="Password Input" type="password" />
+        <Input variant="middle" placeholder="Middle" />
+        <Input variant="small" placeholder="Small" />
+        <h3>Select / Multiple Select</h3>
+        <CustomSelect
+          options={Options}
+          onSelect={handleSelect}
+          placeholder="Selecione uma opção"
+        />
+        <MultipleSelect
+          options={Options}
+          onSelect={handleSelect}
+          placeholder="Multiple select"
+        />
+        <h3>Divier</h3>
+        solid:
+        <Divider />
+        dotted:
+        <Divider type="dotted" />
+        dashed:
+        <Divider type="dashed" />
+        <h3>Grid</h3>
+        <div>
+          <Row style={{ background: 'purple' }}>
+            <Col span={24} align="flex-end" alignVertical="bottom" order="last">
+              col
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12} style={{ background: 'yellow' }}>
+              col-12
+            </Col>
+            <Col span={12} style={{ background: 'red' }}>
+              col-12
+            </Col>
+          </Row>
+          <Row>
+            <Col span={8} style={{ background: 'blue' }}>
+              col-8
+            </Col>
+            <Col span={8} style={{ background: 'green' }}>
+              col-8
+            </Col>
+            <Col span={8} style={{ background: 'yellow' }}>
+              col-8
+            </Col>
+          </Row>
+          <Row>
+            <Col span={6} style={{ background: 'purple' }}>
+              col-6
+            </Col>
+            <Col span={6} style={{ background: 'red' }}>
+              col-6
+            </Col>
+            <Col span={6} style={{ background: 'blue' }}>
+              col-6
+            </Col>
+            <Col span={6} style={{ background: 'green' }}>
+              col-6
+            </Col>
+          </Row>
+        </div>
+      </div> */}
+      {/* <h3>breadcrumb</h3>
       <Breadcrumb routes={routes} />
       <h3>Switch</h3>
       <Switch defaultChecked={true} onChange={onChange} /> */}
-
-      {/* <ExpandCard /> */}
-
-      {/* <VideoCard /> */}
-
-      {/* <Carousel /> */}
-      {/* <SwitchButton /> */}
-      {/* <SubscriptionCard /> */}
-      {/* <Header /> */}
-      {/* <Header /> */}
-      {/* <SlidingTabs /> */}
-      {/* <Form /> */}
-      {/* <AccordionItem items={items} /> */}
-      <DetailsCard />
+      <div>
+        <Tabs />
+      </div>
     </div>
   );
 }
