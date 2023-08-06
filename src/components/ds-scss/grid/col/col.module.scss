@@ -1,0 +1,54 @@
+@import '@/styles/_variables';
+
+.gridCol {
+  box-sizing: border-box;
+  padding-inline: 8px;
+}
+
+.gridAlign {
+  &.start {
+    justify-content: flex-start;
+  }
+  &.center {
+    justify-content: center;
+  }
+  &.flex-end {
+    justify-content: flex-end;
+  }
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.space-around {
+    justify-content: space-around;
+  }
+}
+
+.gridAlignVertical {
+  &.top {
+    align-items: flex-start;
+  }
+  &.middle {
+    align-items: center;
+  }
+  &.bottom {
+    align-items: flex-end;
+  }
+}
+
+.gridOrder {
+  &.first {
+    order: -1;
+  }
+  &.last {
+    order: 1;
+  }
+}
+
+.gridSpan {
+  @for $i from 1 through 24 {
+    &.span-#{$i} {
+      flex-basis: calc((#{$i} / 24) * 100%);
+      max-width: calc((#{$i} / 24) * 100%);
+    }
+  }
+}
