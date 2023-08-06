@@ -7,6 +7,7 @@ interface ColProps {
   alignVertical?: 'top' | 'middle' | 'bottom';
   order?: 'first' | 'last';
   children?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 export const Col = ({

@@ -1,0 +1,26 @@
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+
+  .separator {
+    margin: 0 5px;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .dropdown {
+    display: inline-block;
+    margin-left: 5px;
+
+    a {
+      margin-left: 5px;
+    }
+  }
+}

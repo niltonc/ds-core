@@ -1,5 +1,6 @@
 'use client';
 
+import Breadcrumb from '@/components/ds-scss/breadcrumb';
 import Button from '@/components/ds-scss/button';
 import Divider from '@/components/ds-scss/divider';
 import { Col } from '@/components/ds-scss/grid/col';
@@ -7,6 +8,7 @@ import { Row } from '@/components/ds-scss/grid/row';
 import Input from '@/components/ds-scss/input';
 import MultipleSelect from '@/components/ds-scss/multiple-select';
 import CustomSelect from '@/components/ds-scss/select';
+import { routes } from '@/mock/breadcrumb';
 
 import { Options } from '@/mock/select-mock';
 
@@ -99,6 +101,8 @@ export default function Home() {
           </Col>
         </Row>
       </div>
+      <h3>breadcrumb</h3>
+      <Breadcrumb routes={routes} />
     </div>
   );
 }
