@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/components/ds-scss/button';
+import Divider from '@/components/ds-scss/divider';
 import Input from '@/components/ds-scss/input';
 import MultipleSelect from '@/components/ds-scss/multiple-select';
 import CustomSelect from '@/components/ds-scss/select';
@@ -39,7 +40,7 @@ export default function Home() {
       <Input variant="middle" placeholder="Middle" />
       <Input variant="small" placeholder="Small" />
 
-      <h3>Select</h3>
+      <h3>Select / Multiple Select</h3>
       <CustomSelect
         options={Options}
         onSelect={handleSelect}
@@ -50,16 +51,6 @@ export default function Home() {
         onSelect={handleSelect}
         placeholder="Multiple select"
       />
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
-      <Button>oi</Button>
     </div>
   );
 }
