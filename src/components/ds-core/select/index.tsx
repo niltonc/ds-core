@@ -1,7 +1,17 @@
 import React, { useRef, useState } from 'react';
 import { useOutsideClick } from '@/hooks/useOutSideClick';
-import { CustomSelectProps, Option } from './types';
 import styles from './select.module.scss';
+
+export interface Option {
+  value: string;
+  label: string;
+}
+
+export type CustomSelectProps = {
+  options: Option[];
+  placeholder?: string;
+  onSelect?: (value: string) => void;
+};
 
 const Select: React.FC<CustomSelectProps> = ({
   options,
@@ -20,7 +30,7 @@ const Select: React.FC<CustomSelectProps> = ({
 
   const handleSelect = (option: Option) => {
     setSelectedValue(option.value);
-    onSelect(option.value);
+    onSelect && onSelect(option.value);
     setIsOpen(false);
   };
 
