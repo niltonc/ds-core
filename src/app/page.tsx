@@ -2,14 +2,9 @@
 import DropdownSelect from '@/components/ds-core/dropdown-select';
 import './../styles/global.scss';
 import Select from '@/components/ds-core/select';
+import DropdownSelectSC from '@/components/ds-core/dropdown-select-sc';
 
 export default function Home() {
-  const options = [
-    { value: 'opcao1', label: 'Opção 1' },
-    { value: 'opcao2', label: 'Opção 2' },
-    { value: 'opcao3', label: 'Opção 3' }
-  ];
-
   const array = [
     {
       _id: '1',
@@ -31,15 +26,21 @@ export default function Home() {
 
   return (
     <div>
-      {/* <div style={{ width: 300, padding: 30 }}>
-        <Select
+      <div style={{ padding: 30 }}>
+        {/* <Select
           options={options}
           onSelect={handleSelect}
           placeholder="Selecione uma opção"
-        />
-      </div> */}
+        /> */}
 
-      <DropdownSelect options={array} />
+        {/* <DropdownSelect options={array} /> */}
+
+        <DropdownSelectSC
+          options={array}
+          placeholder="Selecione uma opção"
+          disabled
+        />
+      </div>
     </div>
   );
 }
