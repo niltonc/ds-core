@@ -17,6 +17,93 @@ export default function Home() {
       text: 'rejected',
       value: 'rejected',
       labelValue: 'rejected'
+    },
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
+    },
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
+    },
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
+    },
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
+    },
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
+    },
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
+    }
+  ];
+
+  const options = [
+    {
+      _id: '1',
+      text: 'approved',
+      value: 'approved',
+      labelValue: 'approved'
+    },
+    {
+      _id: '2',
+      text: 'rejected',
+      value: 'rejected',
+      labelValue: 'rejected'
     }
   ];
 
@@ -27,12 +114,6 @@ export default function Home() {
   return (
     <div>
       <div style={{ padding: 30 }}>
-        {/* <Select
-          options={options}
-          onSelect={handleSelect}
-          placeholder="Selecione uma opção"
-        /> */}
-
         {/* <DropdownSelect options={array} /> */}
 
         <DropdownSelectSC
@@ -40,6 +121,12 @@ export default function Home() {
           placeholder="Selecione uma opção"
           disabled
         />
+
+        {/* <Select
+          options={options}
+          onSelect={handleSelect}
+          placeholder="Selecione uma opção"
+        /> */}
       </div>
     </div>
   );

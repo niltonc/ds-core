@@ -9,19 +9,32 @@ interface ISelectParams {
   height?: number;
 }
 
-export const Ul = styled.ul`
-  /* position: absolute; */
-  max-height: 20vmax;
+export const Ul = styled.ul<ISelectParams>`
+  display: block;
   min-width: 100%;
   padding: 0.4rem;
-  /* flex-direction: column; */
+  max-height: 20vmax;
+  border-radius: 4px;
   background: #ffffff;
+  transition: max-height 0.2s ease;
   border: 1px solid rgba(0, 0, 0, 0.07);
   box-shadow: 0px 1px 2px rgba(37, 37, 39, 0.06);
-  border-radius: 4px;
-  transition: max-height 0.2s ease;
-  /* z-index: 1; */
-  display: block;
+
+  overflow-y: auto;
+  overflow: auto;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #b8b8b8;
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f7f7f8;
+    border-radius: 3px;
+  }
 `;
 
 export const SelectContainer = styled.div<ISelectParams>`
@@ -43,13 +56,7 @@ export const Li = styled.li`
     cursor: pointer;
   }
 
-  /* &:has(input:checked),
-  &:hover {
-    border-bottom: 1px solid #252529;
-    background-color: #252529;
-  } */
-
-  &:has(input:focus) {
+  &:has(input:focus, :hover) {
     background-color: #f7f7f8;
     color: #636574;
     outline: none;
@@ -95,15 +102,15 @@ export const CategorySelect = styled.div`
 `;
 
 export const Span = styled.span`
-  /* font-family: 'Figtree'; */
-  font-weight: 400;
+  font-family: 'Figtree';
   font-size: 14px;
-  line-height: 21px;
   color: #636574;
+  font-weight: 400;
+  line-height: 21px;
 `;
 
 export const SelectValue = styled.div`
-  /* font-family: 'Figtree'; */
+  font-family: 'Figtree';
   height: 100%;
   display: flex;
   font-size: 14px;
@@ -116,8 +123,9 @@ export const SelectValue = styled.div`
 `;
 
 export const ScrollFlow = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow: auto;
+  white-space: nowrap;
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -196,49 +204,41 @@ interface DropdownSelect {
 const DropdownSelectSC: React.FC<DropdownSelect> = ({
   options,
   height = 36,
-  placeholder = '',
-  disabled = false
+  placeholder
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedLabel, setSelectedLabel] = useState('Selecione a categoria');
+  const [selectedLabel, setSelectedLabel] = useState();
 
   const handleOptionClick = (event: any) => {
     setSelectedLabel(event.target.dataset.label);
-    setIsOpen(false);
-  };
-
-  const handleOptionsButtonClick = () => {
-    console.log(!isOpen);
-    setIsOpen(!isOpen);
   };
 
   return (
-    <SelectContainer role="select" onClick={handleOptionsButtonClick}>
+    <SelectContainer role="select">
       <CategorySelect role="category-select">
         <SelectInputOptions type="checkbox" role="options-view-button" />
-        <SelectButton id="select-button" height={height}>
-          <SelectValue role="selected-value" placeholder={placeholder}>
-            {selectedLabel}
+        <SelectButton height={height} id="select-button">
+          <SelectValue role="selected-value">
+            {selectedLabel || placeholder}
           </SelectValue>
         </SelectButton>
       </CategorySelect>
 
       <Ul role="options">
-        <ScrollFlow role="scroll">
-          {options?.map((item: ExceptionOption) => (
-            <Li className="option">
-              <input
-                type="radio"
-                // name="category"
-                // value="bakery"
-                data-label={item?.value}
-                key={item?._id}
-                onClick={handleOptionClick}
-              />
-              <Span role="label">{item?.labelValue ?? item?.text}</Span>
-            </Li>
-          ))}
-        </ScrollFlow>
+        {/* <ScrollFlow role="scroll"> */}
+        {options?.map((item: ExceptionOption) => (
+          <Li key={item?._id}>
+            <input
+              type="radio"
+              name=""
+              value={item?.value}
+              data-label={item?.value}
+              key={item?._id}
+              onClick={handleOptionClick}
+            />
+            <Span role="label">{item?.labelValue ?? item?.text}</Span>
+          </Li>
+        ))}
+        {/* </ScrollFlow> */}
       </Ul>
     </SelectContainer>
   );
